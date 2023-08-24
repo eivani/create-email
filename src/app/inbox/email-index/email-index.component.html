@@ -1,0 +1,10 @@
+
+<ul class="list-group list-group-flush">
+  <li *ngFor="let email of emails" class="list-group-item">
+    <a class="text-decoration-none" [routerLink]="[email.id]">
+      <h5 class="text-black"> {{email.subject}} </h5>
+      <p class="mb-0">  {{email.from}} </p>
+    </a>
+  </li>
+</ul>
+<hr>
