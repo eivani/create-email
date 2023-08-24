@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-12 w-50">
+      <div class="card card-body">
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+
+          <div class="mb-3">
+           <app-input [label]="'Username'" [control]="$any(authForm.get('username'))" [inputType]="'text'"></app-input>
+          </div>
+
+          <div class="mb-3">
+            <app-input [label]="'password'" [control]="$any(authForm.get('password'))" [inputType]="'text'"></app-input>
+          </div>
+
+          <div class="mb-3">
+            <app-input [label]="'passwordConfirmation'" [control]="$any(authForm.get('passwordConfirmation'))" inputType="text"></app-input>
+          </div>
+
+          <div>
+            <button class="btn btn-primary" type="submit">
+              Submit
+            </button>
+          </div>
+          <p *ngIf="authForm.errors?.['passInvalid']"> Password and Password Confirmation must match</p>
+
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
